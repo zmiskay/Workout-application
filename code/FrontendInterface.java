@@ -11,19 +11,19 @@ public class FrontendInterface {
     }
 
     //Uses a for-loop to find workouts for a given day.
-    //If no matching day is found, it returns an empty list.
+    //If no matching day is found, return an empty list.
     
     public List<String> getWorkoutsByDay(String day) {
         List<String> result = new ArrayList<>();
 
         if (day == null) return result;
 
-        // for-loop to search schedules
+        // for loop searching schedules
         for (int i = 0; i < workoutSchedule.size(); i++) {
             WorkoutSchedule ws = workoutSchedule.get(i);
             if (ws.getdate() != null && ws.getdate().equalsIgnoreCase(day)) {
                 result.addAll(ws.getWorkoutList());
-                break; // stop searching once we find the match
+                break; // stop searching once match found
             }
         }
 
